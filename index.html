@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PRINTEÓN — Diseños Exclusivos & Originales</title>
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -27,14 +28,15 @@
             }
         }
     </script>
+
     <!-- FontAwesome icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .star-glow { filter: drop-shadow(0 0 12px rgba(0, 68, 255, 0.6)); }
-    </style>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-brand-bgDark text-gray-100 min-h-screen flex flex-col justify-between">
 
@@ -64,7 +66,7 @@
                     <i class="fa-brands fa-instagram text-lg"></i>
                 </a>
 
-                <button onclick="toggleCartModal()" class="relative p-2.5 rounded-full bg-brand-cardDark border border-gray-700 hover:border-brand-blue transition-all text-white">
+                <button id="cart-toggle-btn" class="relative p-2.5 rounded-full bg-brand-cardDark border border-gray-700 hover:border-brand-blue transition-all text-white">
                     <i class="fa-solid fa-bag-shopping text-lg"></i>
                     <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
                 </button>
@@ -119,7 +121,7 @@
                 <p class="text-gray-400 text-sm mt-1">Nuestros últimos lanzamientos de edición limitada</p>
             </div>
             <div class="w-full md:w-72 relative">
-                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Buscar prendas..." class="w-full bg-brand-cardDark border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-blue pl-10">
+                <input type="text" id="search-input" placeholder="Buscar prendas..." class="w-full bg-brand-cardDark border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-blue pl-10">
                 <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-gray-500 text-xs"></i>
             </div>
         </div>
@@ -129,11 +131,10 @@
             
             <!-- CÓDIGO IMAGEN 1 DE PRODUCTO -->
             <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
-                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(1)">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer modal-trigger" data-id="1">
                     <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
                         Edición Limitada
                     </span>
-                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 1 -->
                     <img id="product-img-1" src="img/Mockup - copia.jpg" alt="Sube, Baja, Gira y Ríe" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-5 flex flex-col flex-1 justify-between">
@@ -142,7 +143,7 @@
                     </div>
                     <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
                         <span class="text-lg font-extrabold text-brand-mint">$55.000 COP</span>
-                        <button onclick="addToCart(1)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                        <button class="add-to-cart-btn px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5" data-id="1">
                             <i class="fa-solid fa-plus"></i> Agregar
                         </button>
                     </div>
@@ -151,11 +152,10 @@
 
             <!-- CÓDIGO IMAGEN 2 DE PRODUCTO -->
             <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
-                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(2)">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer modal-trigger" data-id="2">
                     <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
                         Exclusivo
                     </span>
-                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 2 -->
                     <img id="product-img-2" src="img/Mockup_pez.jpg" alt="Arte, Amor y Ansiedad" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-5 flex flex-col flex-1 justify-between">
@@ -164,7 +164,7 @@
                     </div>
                     <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
                         <span class="text-lg font-extrabold text-brand-mint">$60.000 COP</span>
-                        <button onclick="addToCart(2)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                        <button class="add-to-cart-btn px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5" data-id="2">
                             <i class="fa-solid fa-plus"></i> Agregar
                         </button>
                     </div>
@@ -173,11 +173,10 @@
 
             <!-- CÓDIGO IMAGEN 3 DE PRODUCTO -->
             <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
-                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(3)">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer modal-trigger" data-id="3">
                     <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
                         Top Ventas
                     </span>
-                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 3 -->
                     <img id="product-img-3" src="img/Vaca2.png" alt="Galaxial" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-5 flex flex-col flex-1 justify-between">
@@ -186,7 +185,7 @@
                     </div>
                     <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
                         <span class="text-lg font-extrabold text-brand-mint">$55.000 COP</span>
-                        <button onclick="addToCart(3)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                        <button class="add-to-cart-btn px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5" data-id="3">
                             <i class="fa-solid fa-plus"></i> Agregar
                         </button>
                     </div>
@@ -195,11 +194,10 @@
 
             <!-- CÓDIGO IMAGEN 4 DE PRODUCTO -->
             <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
-                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(4)">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer modal-trigger" data-id="4">
                     <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
                         Básico Premium
                     </span>
-                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 4 -->
                     <img id="product-img-4" src="img/7daaa6ddcadc4ece08daff60946ee4a8.jpg" alt="No hay Money" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-5 flex flex-col flex-1 justify-between">
@@ -208,7 +206,7 @@
                     </div>
                     <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
                         <span class="text-lg font-extrabold text-brand-mint">$67.000 COP</span>
-                        <button onclick="addToCart(4)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                        <button class="add-to-cart-btn px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5" data-id="4">
                             <i class="fa-solid fa-plus"></i> Agregar
                         </button>
                     </div>
@@ -255,7 +253,7 @@
 
     <!-- Shopping Cart Drawer -->
     <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleCartModal()"></div>
+        <div id="cart-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
         <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
             <div class="w-screen max-w-md bg-brand-bgDark border-l border-gray-800 p-6 flex flex-col justify-between shadow-2xl">
                 <div>
@@ -263,7 +261,7 @@
                         <h3 class="text-lg font-bold text-white flex items-center gap-2">
                             <i class="fa-solid fa-bag-shopping text-brand-blue"></i> Tu Carrito
                         </h3>
-                        <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white p-2">
+                        <button id="cart-close-btn" class="text-gray-400 hover:text-white p-2">
                             <i class="fa-solid fa-xmark text-xl"></i>
                         </button>
                     </div>
@@ -275,7 +273,7 @@
                         <span>Total:</span>
                         <span id="cart-total" class="text-brand-mint">$0 COP</span>
                     </div>
-                    <button onclick="checkout()" class="w-full py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition-all">
+                    <button id="checkout-btn" class="w-full py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition-all">
                         Finalizar Compra
                     </button>
                 </div>
@@ -285,9 +283,9 @@
 
     <!-- Quick View Modal -->
     <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeProductModal()"></div>
+        <div id="modal-backdrop" class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
         <div class="relative bg-brand-cardDark border border-gray-700 rounded-2xl max-w-2xl w-full p-6 overflow-hidden shadow-2xl z-10 flex flex-col md:flex-row gap-6">
-            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20">
                 <i class="fa-solid fa-xmark text-xl"></i>
             </button>
             <div class="w-full md:w-1/2 rounded-xl overflow-hidden bg-brand-bgDark border border-gray-800">
@@ -318,104 +316,7 @@
         </div>
     </div>
 
-    <!-- JavaScript logic sincronizado con los IDs de las imágenes HTML -->
-    <script>
-        const productsData = [
-            { id: 1, name: "Tarot: Sube, Baja, Gira y Ríe", price: 55000, tag: "Edición Limitada", desc: "Camiseta de corte oversized en tono marfil con ilustración original tipo carta de tarot magenta en la espalda." },
-            { id: 2, name: "Arte, Amor y Ansiedad", price: 60000, tag: "Exclusivo", desc: "Camiseta estilo Pop-Art moderno con cuadrícula de 6 personajes ilustrados." },
-            { id: 3, name: "Galaxial", price: 55000, tag: "Top Ventas", desc: "Camiseta negra con la frase 'TAKE ME, I HAVE MILK' e ilustración espacial." },
-            { id: 4, name: "No hay Money", price: 67000, tag: "Básico Premium", desc: "Buzo con capota y bolsillo canguro, minimalista con el logo bordado sutil." }
-        ];
-
-        let cart = [];
-
-        function getImgSrc(id) {
-            const imgElement = document.getElementById(`product-img-${id}`);
-            return imgElement ? imgElement.src : '';
-        }
-
-        function formatCOP(amount) {
-            return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(amount);
-        }
-
-        function filterProducts() {
-            const query = document.getElementById('search-input').value.toLowerCase();
-            document.querySelectorAll('.product-item').forEach(card => {
-                const title = card.querySelector('.product-title').innerText.toLowerCase();
-                card.style.display = title.includes(query) ? 'flex' : 'none';
-            });
-        }
-
-        function addToCart(productId) {
-            const item = productsData.find(p => p.id === productId);
-            const imgSrc = getImgSrc(productId);
-            const existing = cart.find(c => c.id === productId);
-            if(existing) { 
-                existing.qty += 1; 
-            } else { 
-                cart.push({ ...item, image: imgSrc, qty: 1 }); 
-            }
-            updateCartUI();
-        }
-
-        function removeFromCart(productId) {
-            cart = cart.filter(c => c.id !== productId);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const cartItemsContainer = document.getElementById('cart-items');
-            const cartBadge = document.getElementById('cart-badge');
-            const cartTotal = document.getElementById('cart-total');
-
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-            cartBadge.innerText = totalQty;
-            cartTotal.innerText = formatCOP(totalPrice);
-
-            if(cart.length === 0) {
-                cartItemsContainer.innerHTML = `<p class="text-center text-gray-500 py-8 text-sm">Tu carrito está vacío</p>`;
-                return;
-            }
-
-            cartItemsContainer.innerHTML = cart.map(item => `
-                <div class="flex items-center justify-between gap-3 bg-brand-cardDark p-3 rounded-xl border border-gray-800">
-                    <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover bg-brand-bgDark">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-xs font-bold text-white truncate">${item.name}</p>
-                        <p class="text-xs text-brand-mint font-semibold">${formatCOP(item.price)} x ${item.qty}</p>
-                    </div>
-                    <button onclick="removeFromCart(${item.id})" class="text-gray-500 hover:text-brand-red p-1">
-                        <i class="fa-solid fa-trash-can text-xs"></i>
-                    </button>
-                </div>
-            `).join('');
-        }
-
-        function toggleCartModal() { document.getElementById('cart-drawer').classList.toggle('hidden'); }
-
-        function openProductModal(id) {
-            const p = productsData.find(prod => prod.id === id);
-            const imgSrc = getImgSrc(id);
-            document.getElementById('modal-img').src = imgSrc;
-            document.getElementById('modal-tag').innerText = p.tag;
-            document.getElementById('modal-title').innerText = p.name;
-            document.getElementById('modal-price').innerText = formatCOP(p.price);
-            document.getElementById('modal-desc').innerText = p.desc;
-            document.getElementById('modal-add-btn').onclick = () => { addToCart(p.id); closeProductModal(); };
-            document.getElementById('product-modal').classList.remove('hidden');
-        }
-
-        function closeProductModal() { document.getElementById('product-modal').classList.add('hidden'); }
-
-        function checkout() {
-            if(cart.length === 0) return alert("Añade productos al carrito primero.");
-            alert("¡Gracias por tu compra en PRINTEÓN! Te redirigiremos a la pasarela de pago.");
-            cart = [];
-            updateCartUI();
-            toggleCartModal();
-        }
-    </script>
+    <!-- JavaScript Custom -->
+    <script src="script.js"></script>
 </body>
 </html>
