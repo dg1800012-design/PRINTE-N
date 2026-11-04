@@ -1,0 +1,38 @@
+:root {
+  --color-red: #CD2926;
+  --color-navy: #273054;
+  --color-yellow: #F3E296;
+  --color-grey: #E5E5E5;
+  --color-mint: #B8E0D2;
+  --color-blue: #0044FF;
+}
+
+/* Transiciones suaves */
+* {
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Barra de desplazamiento personalizad */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #E5E5E5;
+}
+::-webkit-scrollbar-thumb {
+  background: #273054;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CD2926;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

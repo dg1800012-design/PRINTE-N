@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRINTEÓN — Diseños Exclusivos & Originales</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            red: '#CD2926',
+                            navy: '#273054',
+                            yellow: '#F3E296',
+                            grey: '#E5E5E5',
+                            mint: '#B8E0D2',
+                            blue: '#0044FF',
+                            bgDark: '#0E131F',
+                            cardDark: '#171E2F'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .star-glow { filter: drop-shadow(0 0 12px rgba(0, 68, 255, 0.6)); }
+    </style>
+</head>
+<body class="bg-brand-bgDark text-gray-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Top Banner Promo -->
+    <div class="bg-gradient-to-r from-brand-navy via-brand-blue to-brand-navy text-xs sm:text-sm text-center py-2 px-4 font-semibold tracking-wide text-white">
+        ✨ Envíos a toda Colombia — Envío GRATIS por compras superiores a $150.000 COP ✨
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-brand-bgDark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- LOGO PRINCIPAL -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="img/logo printeón en blanco.png" alt="PRINTEÓN Logo" class="h-10 w-auto object-contain star-glow" onError="this.onerror=null; this.src='https://via.placeholder.com/150x50?text=PRINTEON';">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
+                <a href="#catalogo" class="hover:text-brand-yellow transition-colors">Colección 2026</a>
+                <a href="#contacto" class="hover:text-brand-yellow transition-colors">Contacto</a>
+            </nav>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <a href="https://www.instagram.com/printeon_/" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-full bg-brand-cardDark border border-gray-700 hover:border-brand-blue hover:text-pink-500 transition-all text-white flex items-center justify-center" title="Síguenos en Instagram">
+                    <i class="fa-brands fa-instagram text-lg"></i>
+                </a>
+
+                <button onclick="toggleCartModal()" class="relative p-2.5 rounded-full bg-brand-cardDark border border-gray-700 hover:border-brand-blue transition-all text-white">
+                    <i class="fa-solid fa-bag-shopping text-lg"></i>
+                    <span id="cart-badge" class="absolute -top-1 -right-1 bg-brand-red text-white text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-16 lg:py-24 bg-gradient-to-b from-brand-cardDark/50 to-brand-bgDark border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="flex-1 space-y-6 text-center md:text-left">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue/20 border border-brand-blue/40 text-brand-blue font-semibold text-xs tracking-wider uppercase">
+                    <i class="fa-solid fa-sparkles"></i> Diseños Únicos & Ilustrados
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+                    Sutil, joven y <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow via-brand-mint to-brand-blue">auténtico</span>.
+                </h1>
+                <p class="text-gray-400 text-lg max-w-xl">
+                    Prendas de vestir urbanas con concepto gráfico original. Fabricadas con telas premium y detalles estampados únicos.
+                </p>
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start items-center">
+                    <a href="#catalogo" class="px-8 py-3.5 rounded-xl bg-brand-blue hover:bg-blue-600 text-white font-bold transition-all transform hover:-translate-y-0.5 shadow-lg shadow-blue-500/25">
+                        Explorar Colección
+                    </a>
+                    <a href="https://www.instagram.com/printeon_/" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-brand-cardDark hover:bg-gray-800 border border-gray-700 text-white font-bold transition-all flex items-center gap-2">
+                        <i class="fa-brands fa-instagram text-pink-500 text-lg"></i> @printeon_
+                    </a>
+                </div>
+            </div>
+            
+            <div class="flex-1 relative w-full max-w-md">
+                <div class="absolute -inset-1 rounded-2xl bg-gradient-to-r from-brand-blue via-brand-red to-brand-yellow opacity-30 blur-xl"></div>
+                <div class="relative bg-brand-cardDark rounded-2xl border border-gray-700 overflow-hidden shadow-2xl">
+                    <img src="img/Mockup - copia.jpg" alt="PRINTEÓN Featured" class="w-full h-[420px] object-cover object-center">
+                    <div class="p-4 bg-brand-cardDark/90 backdrop-blur-sm border-t border-gray-800 flex justify-between items-center">
+                        <div>
+                            <p class="text-xs text-brand-yellow font-medium">Lanzamiento Exclusivo</p>
+                            <p class="font-bold text-white">Sube, Baja, Gira y Ríe</p>
+                        </div>
+                        <span class="text-lg font-bold text-brand-mint">$55.000 COP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Catalog Section -->
+    <main id="catalogo" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 flex-1">
+        <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
+            <div>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Catálogo Destacado</h2>
+                <p class="text-gray-400 text-sm mt-1">Nuestros últimos lanzamientos de edición limitada</p>
+            </div>
+            <div class="w-full md:w-72 relative">
+                <input type="text" id="search-input" onkeyup="filterProducts()" placeholder="Buscar prendas..." class="w-full bg-brand-cardDark border border-gray-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-blue pl-10">
+                <i class="fa-solid fa-search absolute left-3.5 top-3.5 text-gray-500 text-xs"></i>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR CON CÓDIGOS DE IMAGEN MODIFICABLES DIRECTOS -->
+        <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- CÓDIGO IMAGEN 1 DE PRODUCTO -->
+            <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(1)">
+                    <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
+                        Edición Limitada
+                    </span>
+                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 1 -->
+                    <img id="product-img-1" src="img/Mockup - copia.jpg" alt="Sube, Baja, Gira y Ríe" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                        <h3 class="product-title font-bold text-lg text-white group-hover:text-brand-blue transition-colors">Sube, Baja, Gira y Ríe</h3>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
+                        <span class="text-lg font-extrabold text-brand-mint">$55.000 COP</span>
+                        <button onclick="addToCart(1)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÓDIGO IMAGEN 2 DE PRODUCTO -->
+            <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(2)">
+                    <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
+                        Exclusivo
+                    </span>
+                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 2 -->
+                    <img id="product-img-2" src="img/Mockup_pez.jpg" alt="Arte, Amor y Ansiedad" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                        <h3 class="product-title font-bold text-lg text-white group-hover:text-brand-blue transition-colors">Arte, Amor y Ansiedad</h3>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
+                        <span class="text-lg font-extrabold text-brand-mint">$60.000 COP</span>
+                        <button onclick="addToCart(2)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÓDIGO IMAGEN 3 DE PRODUCTO -->
+            <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(3)">
+                    <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
+                        Top Ventas
+                    </span>
+                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 3 -->
+                    <img id="product-img-3" src="img/Vaca2.png" alt="Galaxial" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                        <h3 class="product-title font-bold text-lg text-white group-hover:text-brand-blue transition-colors">Galaxial</h3>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
+                        <span class="text-lg font-extrabold text-brand-mint">$55.000 COP</span>
+                        <button onclick="addToCart(3)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CÓDIGO IMAGEN 4 DE PRODUCTO -->
+            <div class="product-item bg-brand-cardDark rounded-2xl border border-gray-800 overflow-hidden hover:border-gray-700 transition-all flex flex-col justify-between group">
+                <div class="relative overflow-hidden bg-brand-bgDark cursor-pointer" onclick="openProductModal(4)">
+                    <span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-md bg-brand-navy/80 backdrop-blur-md border border-gray-700 text-[10px] font-bold text-brand-yellow uppercase tracking-wider">
+                        Básico Premium
+                    </span>
+                    <!-- CAMBIA ESTE LINK POR TU IMAGEN 4 -->
+                    <img id="product-img-4" src="img/7daaa6ddcadc4ece08daff60946ee4a8.jpg" alt="No hay Money" class="w-full h-80 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-5 flex flex-col flex-1 justify-between">
+                    <div>
+                        <h3 class="product-title font-bold text-lg text-white group-hover:text-brand-blue transition-colors">No hay Money</h3>
+                    </div>
+                    <div class="mt-4 flex items-center justify-between pt-3 border-t border-gray-800/80">
+                        <span class="text-lg font-extrabold text-brand-mint">$67.000 COP</span>
+                        <button onclick="addToCart(4)" class="px-4 py-2 rounded-lg bg-brand-blue hover:bg-blue-600 text-white font-semibold text-xs transition-all flex items-center gap-1.5">
+                            <i class="fa-solid fa-plus"></i> Agregar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-brand-cardDark border-t border-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-sm">
+            <div>
+                <img src="img/logo printeón en blanco.png" alt="PRINTEÓN Logo" class="h-8 w-auto mb-4" onError="this.onerror=null; this.src='https://via.placeholder.com/120x40?text=PRINTEON';">
+                <p class="text-gray-400">Marca independiente de diseño gráfico textil. Estilo sutil, joven y moderno.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-3">Atención al Cliente</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li>
+                        <a href="https://www.instagram.com/printeon_/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors flex items-center gap-2">
+                            <i class="fa-brands fa-instagram text-pink-500 text-base"></i> @printeon_
+                        </a>
+                    </li>
+                    <li><i class="fa-brands fa-whatsapp text-brand-mint mr-2"></i> +57 301 3628260</li>
+                    <li><i class="fa-solid fa-envelope text-brand-mint mr-2"></i> printeon13@gmail.com</li>
+                    <li><i class="fa-solid fa-truck text-brand-mint mr-2"></i> Envíos a todo el país</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-white mb-3">Métodos de Pago</h4>
+                <p class="text-gray-400 mb-2">Aceptamos Nequi, Daviplata, PSE y Tarjetas de Crédito.</p>
+                <div class="flex gap-3 text-2xl text-gray-400">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <i class="fa-solid fa-qrcode"></i>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-8 pt-6 border-t border-gray-800 text-center text-xs text-gray-500">
+            &copy; 2026 PRINTEÓN. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- Shopping Cart Drawer -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleCartModal()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-brand-bgDark border-l border-gray-800 p-6 flex flex-col justify-between shadow-2xl">
+                <div>
+                    <div class="flex items-center justify-between border-b border-gray-800 pb-4">
+                        <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                            <i class="fa-solid fa-bag-shopping text-brand-blue"></i> Tu Carrito
+                        </h3>
+                        <button onclick="toggleCartModal()" class="text-gray-400 hover:text-white p-2">
+                            <i class="fa-solid fa-xmark text-xl"></i>
+                        </button>
+                    </div>
+                    <div id="cart-items" class="mt-6 space-y-4 overflow-y-auto max-h-[60vh] pr-2"></div>
+                </div>
+
+                <div class="border-t border-gray-800 pt-4 space-y-4">
+                    <div class="flex justify-between text-base font-bold text-white">
+                        <span>Total:</span>
+                        <span id="cart-total" class="text-brand-mint">$0 COP</span>
+                    </div>
+                    <button onclick="checkout()" class="w-full py-3.5 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg transition-all">
+                        Finalizar Compra
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick View Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closeProductModal()"></div>
+        <div class="relative bg-brand-cardDark border border-gray-700 rounded-2xl max-w-2xl w-full p-6 overflow-hidden shadow-2xl z-10 flex flex-col md:flex-row gap-6">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white z-20">
+                <i class="fa-solid fa-xmark text-xl"></i>
+            </button>
+            <div class="w-full md:w-1/2 rounded-xl overflow-hidden bg-brand-bgDark border border-gray-800">
+                <img id="modal-img" src="" alt="" class="w-full h-72 md:h-full object-cover">
+            </div>
+            <div class="w-full md:w-1/2 flex flex-col justify-between space-y-4">
+                <div>
+                    <span id="modal-tag" class="text-xs font-bold text-brand-yellow uppercase tracking-wider"></span>
+                    <h3 id="modal-title" class="text-2xl font-bold text-white mt-1"></h3>
+                    <p id="modal-price" class="text-xl font-bold text-brand-mint mt-2"></p>
+                    <p id="modal-desc" class="text-sm text-gray-400 mt-3"></p>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="text-xs font-semibold text-gray-300 block mb-2">Talla disponible:</label>
+                        <div class="flex gap-2">
+                            <button class="px-3 py-1.5 rounded-lg border border-gray-700 text-xs text-white hover:border-brand-blue focus:bg-brand-blue focus:border-brand-blue">S</button>
+                            <button class="px-3 py-1.5 rounded-lg border border-gray-700 text-xs text-white hover:border-brand-blue focus:bg-brand-blue focus:border-brand-blue">M</button>
+                            <button class="px-3 py-1.5 rounded-lg border border-gray-700 text-xs text-white hover:border-brand-blue focus:bg-brand-blue focus:border-brand-blue">L</button>
+                            <button class="px-3 py-1.5 rounded-lg border border-gray-700 text-xs text-white hover:border-brand-blue focus:bg-brand-blue focus:border-brand-blue">XL</button>
+                        </div>
+                    </div>
+                    <button id="modal-add-btn" class="w-full py-3 bg-brand-blue hover:bg-blue-600 text-white font-bold rounded-xl transition-all">
+                        Añadir al Carrito
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript logic sincronizado con los IDs de las imágenes HTML -->
+    <script>
+        const productsData = [
+            { id: 1, name: "Tarot: Sube, Baja, Gira y Ríe", price: 55000, tag: "Edición Limitada", desc: "Camiseta de corte oversized en tono marfil con ilustración original tipo carta de tarot magenta en la espalda." },
+            { id: 2, name: "Arte, Amor y Ansiedad", price: 60000, tag: "Exclusivo", desc: "Camiseta estilo Pop-Art moderno con cuadrícula de 6 personajes ilustrados." },
+            { id: 3, name: "Galaxial", price: 55000, tag: "Top Ventas", desc: "Camiseta negra con la frase 'TAKE ME, I HAVE MILK' e ilustración espacial." },
+            { id: 4, name: "No hay Money", price: 67000, tag: "Básico Premium", desc: "Buzo con capota y bolsillo canguro, minimalista con el logo bordado sutil." }
+        ];
+
+        let cart = [];
+
+        function getImgSrc(id) {
+            const imgElement = document.getElementById(`product-img-${id}`);
+            return imgElement ? imgElement.src : '';
+        }
+
+        function formatCOP(amount) {
+            return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            document.querySelectorAll('.product-item').forEach(card => {
+                const title = card.querySelector('.product-title').innerText.toLowerCase();
+                card.style.display = title.includes(query) ? 'flex' : 'none';
+            });
+        }
+
+        function addToCart(productId) {
+            const item = productsData.find(p => p.id === productId);
+            const imgSrc = getImgSrc(productId);
+            const existing = cart.find(c => c.id === productId);
+            if(existing) { 
+                existing.qty += 1; 
+            } else { 
+                cart.push({ ...item, image: imgSrc, qty: 1 }); 
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(productId) {
+            cart = cart.filter(c => c.id !== productId);
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const cartBadge = document.getElementById('cart-badge');
+            const cartTotal = document.getElementById('cart-total');
+
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            cartBadge.innerText = totalQty;
+            cartTotal.innerText = formatCOP(totalPrice);
+
+            if(cart.length === 0) {
+                cartItemsContainer.innerHTML = `<p class="text-center text-gray-500 py-8 text-sm">Tu carrito está vacío</p>`;
+                return;
+            }
+
+            cartItemsContainer.innerHTML = cart.map(item => `
+                <div class="flex items-center justify-between gap-3 bg-brand-cardDark p-3 rounded-xl border border-gray-800">
+                    <img src="${item.image}" class="w-12 h-12 rounded-lg object-cover bg-brand-bgDark">
+                    <div class="flex-1 min-w-0">
+                        <p class="text-xs font-bold text-white truncate">${item.name}</p>
+                        <p class="text-xs text-brand-mint font-semibold">${formatCOP(item.price)} x ${item.qty}</p>
+                    </div>
+                    <button onclick="removeFromCart(${item.id})" class="text-gray-500 hover:text-brand-red p-1">
+                        <i class="fa-solid fa-trash-can text-xs"></i>
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        function toggleCartModal() { document.getElementById('cart-drawer').classList.toggle('hidden'); }
+
+        function openProductModal(id) {
+            const p = productsData.find(prod => prod.id === id);
+            const imgSrc = getImgSrc(id);
+            document.getElementById('modal-img').src = imgSrc;
+            document.getElementById('modal-tag').innerText = p.tag;
+            document.getElementById('modal-title').innerText = p.name;
+            document.getElementById('modal-price').innerText = formatCOP(p.price);
+            document.getElementById('modal-desc').innerText = p.desc;
+            document.getElementById('modal-add-btn').onclick = () => { addToCart(p.id); closeProductModal(); };
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() { document.getElementById('product-modal').classList.add('hidden'); }
+
+        function checkout() {
+            if(cart.length === 0) return alert("Añade productos al carrito primero.");
+            alert("¡Gracias por tu compra en PRINTEÓN! Te redirigiremos a la pasarela de pago.");
+            cart = [];
+            updateCartUI();
+            toggleCartModal();
+        }
+    </script>
+</body>
+</html>
